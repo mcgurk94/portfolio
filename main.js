@@ -63,3 +63,12 @@ document.addEventListener("DOMContentLoaded", function(){
     initiateTypewriter();
 
 });
+
+/**
+ * Make the navbar appear after a scroll event
+ * Only needs to be triggered once
+ */
+document.addEventListener("scroll", function(){
+    const navbar = document.getElementById('navbar');
+    navbar.style.opacity = 1;
+}, {once: true})

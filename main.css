@@ -86,3 +86,9 @@ footer a:hover {
         bottom: 0px;
 	}
 }
+
+#navbar {
+    padding: 10px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease; /* Fade-in transition */
+}
