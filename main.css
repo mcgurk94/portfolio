@@ -3,11 +3,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #333;
+}
+
+:root {
+
+    --color-bg-default: #333;
+    --color-fg-default: white;
+    --color-fg-accent: #008f8f;
+
 }
 
 .main-header {
-    color: white;
+    color: var(--color-fg-default);
     min-height: 100vh;
     text-align: center;
     margin: auto;
@@ -15,7 +22,7 @@
 }
 
 .card {
-    background-color: #008f8f; 
+    background-color: var(--color-fg-accent); 
     min-width: 400px;
     min-height: 150px;
     margin: 10px; 
@@ -29,26 +36,26 @@
 
 .card-text {
     background-color: transparent;
-    color: white;
+    color: var(--color-fg-default);
 }
 
 footer a {
-    color: white; /* Set color to black */
+    color: var(--color-fg-default); /* Set color to black */
     text-decoration: none;
     margin: 0 15px; /* Increase margin for better spacing */
     font-size: 50px; /* Increase font size for larger icons */
 }
 
 footer a:hover {
-    color: #008f8f; /* Change color on hover */
+    color: var(--color-fg-accent); /* Change color on hover */
 }
 
 .nav-text {
-    color: white;
+    color: var(--color-fg-default);
 }
 
 .nav-text:hover {
-    color: #008f8f;
+    color: var(--color-fg-accent);
 }
 
 #typewriter-container {
