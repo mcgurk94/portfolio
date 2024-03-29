@@ -42,3 +42,11 @@ footer a {
 footer a:hover {
     color: #008f8f; /* Change color on hover */
 }
+
+.nav-text {
+    color: white;
+}
+
+.nav-text:hover {
+    color: #008f8f;
+}
