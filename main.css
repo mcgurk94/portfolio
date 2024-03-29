@@ -50,3 +50,19 @@ footer a:hover {
 .nav-text:hover {
     color: #008f8f;
 }
+
+#typewriter-container {
+    font-family: Consolas,monaco,monospace; 
+}
+
+#cursor {
+    animation: blink 0.8s infinite;
+    display: inline-block;
+}
+ 
+@keyframes blink {
+    0% { opacity: 0 }
+    50% { opacity: 1 }
+    100% { opacity: 0 }
+}
+
