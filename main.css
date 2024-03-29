@@ -98,4 +98,13 @@ footer a:hover {
     padding: 10px;
     opacity: 0; /* Initially hidden */
     transition: opacity 1s ease; /* Fade-in transition */
+    background-color: var(--color-bg-default);
+}
+.section-container {
+    background-color: var(--color-bg-default);
+    padding: 20px;
+}
+
+footer {
+    background-color: #4c4c4c;
 }
