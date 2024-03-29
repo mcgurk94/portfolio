@@ -13,3 +13,21 @@
     margin: auto;
     align-items: center;
 }
+
+.card {
+    background-color: #008f8f; 
+    min-width: 400px;
+    min-height: 150px;
+    margin: 10px; 
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card-text {
+    background-color: transparent;
+    color: white;
+}
