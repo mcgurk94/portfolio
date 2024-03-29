@@ -31,3 +31,14 @@
     background-color: transparent;
     color: white;
 }
+
+footer a {
+    color: white; /* Set color to black */
+    text-decoration: none;
+    margin: 0 15px; /* Increase margin for better spacing */
+    font-size: 50px; /* Increase font size for larger icons */
+}
+
+footer a:hover {
+    color: #008f8f; /* Change color on hover */
+}
