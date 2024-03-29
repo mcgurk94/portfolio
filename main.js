@@ -28,9 +28,7 @@ function typeWriter(textArray, element, delay) {
         if (lineIndex < textArray.length) {
             const line = textArray[lineIndex];
             if (charIndex < line.length) {
-                console.log(line.charAt(charIndex));
                 element.innerHTML += line.charAt(charIndex);
-                console.log(element.innerHTML)
                 charIndex++;
                 setTimeout(type, delay);
             } 
