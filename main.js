@@ -73,6 +73,19 @@ function initiateObserver(){
         });
     }
 
+    // When the 'history' section is viewed, trigger element animations
+    function handleIntersectionHistory(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const cardElements = entry.target.querySelectorAll('.card');
+                cardElements.forEach((card, index) => {
+                    card.style.animation = `swoopInBottom 1s forwards ${index * 500}ms`;
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }
+
     // Default options for all observers
     const observerOpts = {
         root: null,
@@ -84,6 +97,17 @@ function initiateObserver(){
     const oberverAbout = new IntersectionObserver(handleIntersectionAbout, observerOpts);
     const sectionAbout = document.getElementById('about');
     oberverAbout.observe(sectionAbout);
+
+    // Observe the 'history' section
+    const oberverHisory = new IntersectionObserver(handleIntersectionHistory, observerOpts);
+    const sectionHistory = document.getElementById('history');
+    oberverHisory.observe(sectionHistory);
+
+    // Observe the 'projects' section
+    // Use the history handler for now because they are treated the same. This may change in the future
+    const oberverProjects = new IntersectionObserver(handleIntersectionHistory, observerOpts);
+    const sectionProjects = document.getElementById('projects');
+    oberverProjects.observe(sectionProjects);
 
 }
 
