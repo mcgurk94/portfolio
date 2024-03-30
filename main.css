@@ -76,11 +76,11 @@ footer a:hover {
 #subtitle {
     font-size: 18pt;
     position: relative;
-    animation: swoopIn 2s ease 4s 1 normal forwards;
+    animation: swoopInBottom 2s ease 4s 1 normal forwards;
     opacity: 0;
 }
 
-@keyframes swoopIn {
+@keyframes swoopInBottom {
 	0% {
 		opacity: 0;
 		transform: translateY(50px);
