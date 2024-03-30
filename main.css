@@ -125,3 +125,7 @@ footer {
     max-height: 40vh; 
     max-width: 20vw;
 }
+
+h1 {
+    font-weight: bold;
+}
