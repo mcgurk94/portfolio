@@ -46,7 +46,8 @@ footer a:hover {
     color: var(--color-fg-accent); /* Change color on hover */
 }
 
-.nav-text {
+.nav-text,
+.nav-text:visited {
     color: var(--color-fg-default);
 }
 
