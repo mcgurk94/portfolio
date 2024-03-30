@@ -121,6 +121,22 @@ h1 {
     font-weight: bold;
 }
 
+#popup {
+    position: absolute;
+    background-color: transparent;
+    display: none;
+}
+
+#popup img {
+    height: 200px;
+    border-radius: 30px;
+    transform: translateX(-50%);
+}
+
+.hover-trigger:hover {
+    color: var(--color-fg-accent); /* Change color on hover */
+}
+
 @keyframes swoopInBottom {
 	0% {
 		opacity: 0;

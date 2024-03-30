@@ -87,6 +87,26 @@ function initiateObserver(){
 
 }
 
+/**
+ * When a trigger phrase is moused over, show off a picture of Millie and Bramble 
+ */
+function initiateKittens(){
+    const trigger = document.querySelector('.hover-trigger');
+    const popup = document.getElementById('popup');
+
+    trigger.addEventListener('mouseover', function(){
+        const rect = trigger.getBoundingClientRect();
+        const scrollY = window.scrollY;
+        popup.style.display = 'block';
+        popup.style.top = rect.top + scrollY - 200 + "px";
+        popup.style.left = rect.left + "px";
+    });
+
+    trigger.addEventListener("mouseout", function() {
+        popup.style.display = "none";
+    });
+
+}
 
 /**
  * Call functions after the page has loaded
@@ -95,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function(){
     switchKeywords();
     initiateTypewriter();
     initiateObserver();
+    initiateKittens();
 });
 
 /**
