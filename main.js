@@ -20,7 +20,7 @@ function switchKeywords() {
  * Update an element with text, simulating a typewriter
  * @param {Array} textArray     Array of strings, each element of the array will be on a different line 
  * @param {HTMLElement} element HTMLElement on the page to be updated 
- * @param {Integer} delay             Delay between each character in milliseconds
+ * @param {Integer} delay       Delay between each character in milliseconds
  */
 function typeWriter(textArray, element, delay) {
 
