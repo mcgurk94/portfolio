@@ -80,20 +80,6 @@ footer a:hover {
     opacity: 0;
 }
 
-@keyframes swoopInBottom {
-	0% {
-		opacity: 0;
-		transform: translateY(50px);
-        bottom: -100px;
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-        bottom: 0px;
-	}
-}
-
 #navbar {
     padding: 10px;
     opacity: 0; /* Initially hidden */
@@ -133,6 +119,20 @@ footer {
 
 h1 {
     font-weight: bold;
+}
+
+@keyframes swoopInBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+        bottom: -100px;
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+        bottom: 0px;
+	}
 }
 
 @keyframes swoopInRight {
