@@ -108,14 +108,14 @@ function initiateObserver(){
     const oberverProjects = new IntersectionObserver(handleIntersectionHistory, observerOpts);
     const sectionProjects = document.getElementById('projects');
     oberverProjects.observe(sectionProjects);
-
+    
 }
 
 /**
  * When a trigger phrase is moused over, show off a picture of Millie and Bramble 
  */
 function initiateKittens(){
-    const trigger = document.querySelector('.hover-trigger');
+    const trigger = document.getElementById('trigger-kittens');
     const popup = document.getElementById('popup');
 
     trigger.addEventListener('mouseover', function(){
@@ -133,6 +133,34 @@ function initiateKittens(){
 }
 
 /**
+ * When a trigger phrase is moused over, the text will burn away
+ */
+function initiateBurnableText(){
+
+    const container = document.getElementById('burnable-container');
+
+    // When mousing over the element, it should burn away in a random direction
+    container.addEventListener('mouseover', function(){
+        container.querySelectorAll('.burnable').forEach(trigger => {
+            trigger.style.setProperty('--translateX-ratio', Math.random());
+            trigger.style.setProperty('--translateY-ratio', Math.random());
+            trigger.style.setProperty('--rotate-ratio', Math.random());
+            trigger.style.setProperty('--scale-ratio', Math.random());
+
+            trigger.classList.add('burn-away');
+        });
+    });
+
+    // When mousing out of the element, it should reappear
+    container.addEventListener('mouseout', function(){
+        container.querySelectorAll('.burnable').forEach(trigger => {
+            trigger.classList.remove('burn-away');
+        });
+    });
+
+}
+
+/**
  * Call functions after the page has loaded
  */
 document.addEventListener("DOMContentLoaded", function(){
@@ -140,6 +168,7 @@ document.addEventListener("DOMContentLoaded", function(){
     initiateTypewriter();
     initiateObserver();
     initiateKittens();
+    initiateBurnableText();
 });
 
 /**
