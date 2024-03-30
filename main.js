@@ -56,12 +56,45 @@ function initiateTypewriter() {
 }
 
 /**
+ * Set up observers to trigger animations when certain parts of the page are viewed for the first time
+ */
+function initiateObserver(){
+
+    // When the 'about' section is viewed, trigger element animations
+    function handleIntersectionAbout(entries, observer) {
+        const textAbout = document.getElementById('about-text');
+        const imageAbout = document.getElementById('img-headshot');
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                textAbout.style.animation = 'swoopInLeft 1s forwards'; // Apply animation when in view
+                imageAbout.style.animation = 'swoopInRight 1s 0.5s forwards'; // Apply animation when in view
+                observer.unobserve(entry.target); // Stop observing once animation is applied
+            }
+        });
+    }
+
+    // Default options for all observers
+    const observerOpts = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5 // Trigger when 50% of the element is visible
+    };
+
+    // Observe the 'about' section
+    const oberverAbout = new IntersectionObserver(handleIntersectionAbout, observerOpts);
+    const sectionAbout = document.getElementById('about');
+    oberverAbout.observe(sectionAbout);
+
+}
+
+
+/**
  * Call functions after the page has loaded
  */
 document.addEventListener("DOMContentLoaded", function(){
     switchKeywords();
     initiateTypewriter();
-
+    initiateObserver();
 });
 
 /**

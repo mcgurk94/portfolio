@@ -124,8 +124,41 @@ footer {
 #img-headshot {
     max-height: 40vh; 
     max-width: 20vw;
+    opacity: 0;
+}
+
+#about-text {
+    opacity: 0;
 }
 
 h1 {
     font-weight: bold;
+}
+
+@keyframes swoopInRight {
+	0% {
+		opacity: 0;
+		transform: translateX(100px);
+        right: 100px;
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+        right: 0px;
+	}
+}
+
+@keyframes swoopInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-100px);
+        left: -100px;
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+        left: 0px;
+	}
 }
