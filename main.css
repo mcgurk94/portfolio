@@ -74,7 +74,7 @@ footer a:hover {
 }
 
 #subtitle {
-    font-size: larger;
+    font-size: 18pt;
     position: relative;
     animation: swoopIn 2s ease 4s 1 normal forwards;
     opacity: 0;
@@ -107,4 +107,8 @@ footer a:hover {
 
 footer {
     background-color: #4c4c4c;
+}
+
+#home-logo {
+    max-width: 100px;
 }
