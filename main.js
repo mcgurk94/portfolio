@@ -67,7 +67,7 @@ function initiateObserver(){
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 textAbout.style.animation = 'swoopInLeft 1s forwards'; // Apply animation when in view
-                imageAbout.style.animation = 'swoopInRight 1s 0.5s forwards'; // Apply animation when in view
+                imageAbout.style.animation = 'swoopInRight 1s 0.5s forwards, slowMove 2s ease-in-out infinite alternate'; // Apply animation when in view
                 observer.unobserve(entry.target); // Stop observing once animation is applied
             }
         });
