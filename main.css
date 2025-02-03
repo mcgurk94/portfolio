@@ -28,11 +28,16 @@
     margin: 10px; 
     border-radius: 15px;
     opacity: 0;
+    box-shadow : 0 5px 20px;
 }
 
 .card-text {
     background-color: transparent;
     color: var(--color-fg-default);
+}
+
+.card:hover {
+    box-shadow: 0 0 5px var(--color-fg-accent);
 }
 
 footer a {
