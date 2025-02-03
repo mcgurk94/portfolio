@@ -138,6 +138,16 @@ function initiateKittens(){
 function initiateBurnableText(){
 
     const container = document.getElementById('burnable-container');
+    const text = container.textContent;
+    container.innerHTML = '';
+
+    // Split the text content by characters, allowing it to burn sequentially
+    text.split('').forEach(character => {
+        const char = document.createElement('span');
+        char.classList.add('burnable');
+        char.innerHTML = character === ' ' ?  '&nbsp;' : character; // retain spaces
+        container.appendChild(char)
+    });
 
     // When mousing over the element, it should burn away in a random direction
     container.addEventListener('mouseover', function(){
@@ -148,16 +158,14 @@ function initiateBurnableText(){
             trigger.style.setProperty('--scale-ratio', Math.random());
 
             trigger.classList.add('burn-away');
+
+            trigger.addEventListener('animationend', function handleBurningAnimation(){
+                trigger.classList.remove('burn-away');
+                trigger.removeEventListener('animationend', handleBurningAnimation);
+            })
+
         });
     });
-
-    // When mousing out of the element, it should reappear
-    container.addEventListener('mouseout', function(){
-        container.querySelectorAll('.burnable').forEach(trigger => {
-            trigger.classList.remove('burn-away');
-        });
-    });
-
 }
 
 /**

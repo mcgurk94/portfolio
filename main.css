@@ -150,18 +150,15 @@ h1 {
 @keyframes smoke {
     0% {
         color: orangered;
-        opacity: 1;
         filter: blur(0);
         transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+        pointer-events: none;
     }
     50% {
         color: yellow;
-        pointer-events: none;
-        opacity: 1;
     }
     100% {
         color: gray;
-        opacity: 0;
         filter: blur(40px);
         transform: /* transformation uses randomised variables which are applied to the element in javascript */
             translateX(calc(200px * var(--translateX-ratio)))
