@@ -31,7 +31,7 @@
     box-shadow : 0 5px 20px;
 }
 
-.card-text {
+.card > * {
     background-color: transparent;
     color: var(--color-fg-default);
 }
