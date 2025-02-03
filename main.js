@@ -98,10 +98,15 @@ function initiateObserver(){
     const sectionAbout = document.getElementById('about');
     oberverAbout.observe(sectionAbout);
 
+    // Observe the 'education' section
+    const oberverEducation = new IntersectionObserver(handleIntersectionHistory, observerOpts);
+    const sectionEducation = document.getElementById('education');
+    oberverEducation.observe(sectionEducation);
+
     // Observe the 'history' section
-    const oberverHisory = new IntersectionObserver(handleIntersectionHistory, observerOpts);
+    const observerHistory = new IntersectionObserver(handleIntersectionHistory, observerOpts);
     const sectionHistory = document.getElementById('history');
-    oberverHisory.observe(sectionHistory);
+    observerHistory.observe(sectionHistory);
 
     // Observe the 'projects' section
     // Use the history handler for now because they are treated the same. This may change in the future
