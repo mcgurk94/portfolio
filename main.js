@@ -17,6 +17,15 @@ function switchKeywords() {
 }
 
 /**
+ * Retrieve the height of the navbar to help offset anchors
+ * @returns {Integer}
+ */
+function getNavbarHeight(){
+    const navbar = document.getElementById('navbar');
+    return navbar.offsetHeight;
+}
+
+/**
  * Update an element with text, simulating a typewriter
  * @param {Array} textArray     Array of strings, each element of the array will be on a different line 
  * @param {HTMLElement} element HTMLElement on the page to be updated 
@@ -174,6 +183,28 @@ function initiateBurnableText(){
 }
 
 /**
+ * The navbar covers some of the body text when using anchors to move through the window
+ * Set up listeners to help scroll to the correct position
+ */
+function initiateAnchors(){
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (event) {
+            event.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const target = document.getElementById(targetId);
+
+            if (target){
+                const position = target.getBoundingClientRect().top + window.scrollY;
+                window.scrollTo({
+                    top: position - getNavbarHeight(),
+                    behavior: 'smooth'
+                })
+            }
+        })
+    })
+}
+
+/**
  * Call functions after the page has loaded
  */
 document.addEventListener("DOMContentLoaded", function(){
@@ -182,6 +213,7 @@ document.addEventListener("DOMContentLoaded", function(){
     initiateObserver();
     initiateKittens();
     initiateBurnableText();
+    initiateAnchors();
 });
 
 /**
