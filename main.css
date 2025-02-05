@@ -60,6 +60,18 @@ footer a:hover {
     color: var(--color-fg-accent);
 }
 
+.centered {
+    justify-content: center;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-left {
+    text-align: left;
+}
+
 #typewriter-container {
     font-family: Consolas,monaco,monospace; 
 }
@@ -88,6 +100,10 @@ footer a:hover {
     opacity: 0; /* Initially hidden */
     transition: opacity 1s ease; /* Fade-in transition */
     background-color: var(--color-bg-default);
+}
+
+#navbar:hover {
+    box-shadow: 0 0 10px #4c4c4c;
 }
 
 #about {
